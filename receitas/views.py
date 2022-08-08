@@ -5,8 +5,9 @@ from django.shortcuts import get_object_or_404, render, get_list_or_404
 # Create your views here.
 
 def index(request):
-    receitas = Receita.objects.all()
-
+    #receitas = Receita.objects.all()
+    receitas = Receita.objects.order_by('-data_receita').filter(publicada = True)
+    
     dados = {
         'receitas' : receitas
     }
