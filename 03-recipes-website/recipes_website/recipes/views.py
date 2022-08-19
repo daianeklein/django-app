@@ -7,3 +7,6 @@ from django.http import HttpResponse
 def index(request):
     return render(request,'index.html')
 
+def view_recipes_page(request):
+    return render(request, 'recipes.html')
+
