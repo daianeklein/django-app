@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'recipes_website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'recipes-website',
+        'USER' : 'postgres',
+        'PASSWORD' : '220891',
+        'HOST' : 'localhost'
+
     }
 }
 
