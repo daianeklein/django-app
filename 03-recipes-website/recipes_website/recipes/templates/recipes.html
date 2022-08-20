@@ -21,65 +21,16 @@
                                         <a href=""><i class="fa fa-link" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
+                                {% if recipes %}
+                                {% for recipes in recipes %}
                                 <div class="blog-dit">
                                     <p><span>25 NOVEMBER, 2014</span></p>
-                                    <h2>Salmon Curry!</h2>
+                                    <h2>{{ recipes.recipe_name }}</h2>
                                     <h5>BY John Doggett</h5>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="blog-block">
-                                <div class="blog-img-box">
-                                    <img src="images/featured-image-02.jpg" alt="" />
-                                    <div class="overlay">
-                                        <a href=""><i class="fa fa-link" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-dit">
-                                    <p><span>2 NOVEMBER, 2014</span></p>
-                                    <h2>Fresh Tomato Soup</h2>
-                                    <h5>BY Jeffrey Spender</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="blog-block">
-                                <div class="blog-img-box">
-                                    <img src="images/featured-image-03.jpg" alt="" />
-                                    <div class="overlay">
-                                        <a href=""><i class="fa fa-link" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-dit">
-                                    <p><span>4 NOVEMBER, 2014</span></p>
-                                    <h2>Whiskey Chicken</h2>
-                                    <h5>BY Monica Reyes</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="blog-block">
-                                <div class="blog-img-box">
-                                    <img src="images/featured-image-04.jpg" alt="" />
-                                    <div class="overlay">
-                                        <a href=""><i class="fa fa-link" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-dit">
-                                    <p><span>12 NOVEMBER, 2014</span></p>
-                                    <h2>Fresh Fig Cake</h2>
-                                    <h5>BY John Doggett</h5>
-                                </div>
+                                {% endfor %}
+                                {% else %}
+                                {% endif %}
                             </div>
                         </div>
                         <!-- end col -->
