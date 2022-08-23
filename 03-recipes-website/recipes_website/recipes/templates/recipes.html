@@ -25,7 +25,7 @@
                                 {% for recipes in recipes %}
                                 <div class="blog-dit">
                                     <p><span>25 NOVEMBER, 2014</span></p>
-                                    <h2>{{ recipes.recipe_name }}</h2>
+                                    <a href="{% url 'recipes_details' %}"><h2>{{ recipes.id }}</h2></a>
                                     <h5>BY John Doggett</h5>
                                 </div>
                                 {% endfor %}
