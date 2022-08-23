@@ -16,6 +16,6 @@ def view_recipes_page(request):
     }
     return render(request, 'recipes.html', data_recipes)
 
-def view_recipes_details(request):
+def view_recipes_details(request, recipes_id):
     return render(request, 'recipes_details.html')
 
