@@ -4,6 +4,7 @@ from tempus_dominus.widgets import DatePicker
 from datetime import datetime
 
 from passagens.classe_viagem import tipos_de_classes
+from passagens.validation import *
 
 
 class PassagemForms(forms.Form):
@@ -19,3 +20,27 @@ class PassagemForms(forms.Form):
         widget=forms.Textarea(),
         required= False)
     email = forms.EmailField(label='e-mail', max_length=50)
+
+
+    def clean(self):
+        origem = self.cleaned_data.get('origem')
+        destino = self.cleaned_data.get('destino')
+        data_ida = self.cleaned_data.get('data_ida')
+        data_volta = self.cleaned_data.get('data_volta')
+        data_pesquisa = self.cleaned_data.get('data_pesquisa')
+
+        lista_erros = {}
+        campo_tem_algum_numero(origem, 'origem', lista_erros)
+        campo_tem_algum_numero(destino, 'destino', lista_erros)
+        origem_destino_iguais(origem, destino, lista_erros)
+        data_ida_maior_que_data_volta(data_ida, data_volta, lista_erros)
+        data_ida_menor_data_hoje(data_ida, data_pesquisa, lista_erros)
+
+        if lista_erros is not None:
+            for erro in lista_erros:
+                mensagem_erro = lista_erros[erro]
+                self.add_error(erro, mensagem_erro)
+
+        return self.cleaned_data
+
+    
