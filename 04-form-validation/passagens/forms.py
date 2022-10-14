@@ -38,6 +38,11 @@ class PassagemForms(forms.ModelForm):
         #     required= False)
         # email = forms.EmailField(label='e-mail', max_length=50)
 
+class PessoaForms(forms.ModelForm):
+    class Meta:
+        model = Pessoa
+        exclude = ['nome']
+
 
     def clean(self):
         origem = self.cleaned_data.get('origem')
