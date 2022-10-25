@@ -2,11 +2,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Upload</h2>
+<!DOCTYPE html>  
+<html>
+  
+<h2>Upload</h2>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="document">
     <button type="submit">Upload file</button>
   </form>
 
+  <form action="{% url 'file_successfully_uploaded' %}" method = 'post' enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>
+      {{ form.file }}
+    </p>
+    <p><input type="submit" value="Upload"></p>
+
+  </form>
+</html>
 {% endblock %}
