@@ -21,7 +21,7 @@ def uploaded_file(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         file = request.FILES['file']
-        return HttpResponse("Great! " + str(file))
+        print(file)
     else:
         form = UploadFileForm()
     return render(request, 'home.html', {'form' : form})
